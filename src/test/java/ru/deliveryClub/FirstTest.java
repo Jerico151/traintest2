@@ -9,15 +9,8 @@ import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class FirstTest {
-    public ChromeDriver driver;
+public class FirstTest extends WebDriverSettings {
 
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "c:\\Users/user/Desktop/chromedriver.exe");
-        driver = new ChromeDriver();
-        System.out.println("test start");
-    }
 
     @Test
     public void firstTest() {
@@ -34,11 +27,4 @@ public class FirstTest {
         String title = driver.getTitle();
         Assert.assertTrue(title.equals("Доставка еды из ресторанов Москвы за 15-30 минут! Delivery Club"));
     }
-
-    @After
-    public void close() {
-        System.out.println("test close");
-        driver.quit();
-    }
-
 }
